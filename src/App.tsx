@@ -1,6 +1,7 @@
 import { Button as ButtonDif } from "./components/Button_Dif_Elements.tsx";
 import { Button } from "./components/Button.tsx";
 import Input from "./components/Input.tsx";
+import Container from "./components/Container.tsx";
 
 function App() {
 	return (
@@ -21,6 +22,7 @@ function App() {
 			<p>
 				<Button href="https://google.com">A Link</Button>
 			</p>
+			<Container as={Button} />
 		</main>
 	);
 }
