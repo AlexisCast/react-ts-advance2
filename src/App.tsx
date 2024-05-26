@@ -1,4 +1,5 @@
-import Button from "./components/Button.tsx";
+import { Button as ButtonDif } from "./components/Button_Dif_Elements.tsx";
+import { Button } from "./components/Button.tsx";
 import Input from "./components/Input.tsx";
 
 function App() {
@@ -7,12 +8,18 @@ function App() {
 			<Input id="name" label="Your name" type="text" />
 			<Input id="age" label="Your age" type="number" />
 			<p>
-				<Button el="button">A Button</Button>
+				<ButtonDif el="button">A Button</ButtonDif>
 			</p>
 			<p>
-				<Button el="anchor" href="https://google.com">
+				<ButtonDif el="anchor" href="https://google.com">
 					A Link
-				</Button>
+				</ButtonDif>
+			</p>
+			<p>
+				<Button>A Button</Button>
+			</p>
+			<p>
+				<Button href="https://google.com">A Link</Button>
 			</p>
 		</main>
 	);
