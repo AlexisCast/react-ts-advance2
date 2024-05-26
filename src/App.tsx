@@ -4,6 +4,10 @@ import Input from "./components/Input.tsx";
 import Container from "./components/Container.tsx";
 
 function App() {
+	const hanleClick = () => {
+		console.log("click!");
+	};
+
 	return (
 		<main>
 			<Input id="name" label="Your name" type="text" />
@@ -22,7 +26,9 @@ function App() {
 			<p>
 				<Button href="https://google.com">A Link</Button>
 			</p>
-			<Container as={Button} />
+			<Container as={Button} onClick={hanleClick}>
+				Click Me!
+			</Container>
 		</main>
 	);
 }
