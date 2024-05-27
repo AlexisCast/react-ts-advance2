@@ -1,17 +1,24 @@
+import { useRef } from "react";
+
 import { Button as ButtonDif } from "./components/Button_Dif_Elements.tsx";
 import { Button } from "./components/Button.tsx";
-import Input from "./components/Input.tsx";
+//Without ref
+import { Input as InputNoRef } from "./components/Input.tsx";
+//With ref
+import { Input as InputR } from "./components/InputRef.tsx";
 import Container from "./components/Container.tsx";
 
 function App() {
+	const input = useRef<HTMLInputElement>(null);
+
 	const hanleClick = () => {
 		console.log("click!");
 	};
 
 	return (
 		<main>
-			<Input id="name" label="Your name" type="text" />
-			<Input id="age" label="Your age" type="number" />
+			<InputNoRef id="name" label="Your name" type="text" />
+			<InputNoRef id="age" label="Your age" type="number" />
 			<p>
 				<ButtonDif el="button">A Button</ButtonDif>
 			</p>
@@ -29,6 +36,8 @@ function App() {
 			<Container as={Button} onClick={hanleClick}>
 				Click Me!
 			</Container>
+			<InputR id="name" label="Your name" type="text" ref={input} />
+			<InputR id="age" label="Your age" type="number" />
 		</main>
 	);
 }
