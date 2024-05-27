@@ -5,7 +5,7 @@ type InputProps = {
 	id: string;
 } & ComponentPropsWithoutRef<"input">;
 
-const Input = ({ label, id, ...props }: InputProps) => {
+export const Input = ({ label, id, ...props }: InputProps) => {
 	return (
 		<p>
 			<label htmlFor={id}>{label}</label>
@@ -13,5 +13,3 @@ const Input = ({ label, id, ...props }: InputProps) => {
 		</p>
 	);
 };
-
-export default Input;
