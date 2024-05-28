@@ -8,9 +8,14 @@ import { Input as InputNoRef } from "./components/Input.tsx";
 import { Input as InputR } from "./components/InputRef.tsx";
 import Container from "./components/Container.tsx";
 import { Form } from "./components/Form.tsx";
+import {
+	Form as FormImp,
+	type FormHandle,
+} from "./components/FormImperative.tsx";
 
 function App() {
 	const input = useRef<HTMLInputElement>(null);
+	const customForm = useRef<FormHandle>(null);
 
 	const hanleClick = () => {
 		console.log("click!");
@@ -19,6 +24,13 @@ function App() {
 	const handleSave = (data: unknown) => {
 		const extractedData = data as { name: string; age: string };
 		console.log({ extractedData });
+	};
+
+	const handleSaveImperative = (data: unknown) => {
+		const extractedData = data as { name: string; age: string };
+		console.log("IMPS");
+		console.log({ extractedData });
+		customForm.current?.clear();
 	};
 
 	return (
@@ -52,6 +64,14 @@ function App() {
 					<Button>Save</Button>
 				</p>
 			</Form>
+			<hr />
+			<FormImp onSave={handleSaveImperative} ref={customForm}>
+				<InputR type="text" label="name" id="name" />
+				<InputR type="number" label="age" id="age" />
+				<p>
+					<Button>Save</Button>
+				</p>
+			</FormImp>
 		</main>
 	);
 }
