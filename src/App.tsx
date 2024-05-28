@@ -7,12 +7,18 @@ import { Input as InputNoRef } from "./components/Input.tsx";
 //With ref
 import { Input as InputR } from "./components/InputRef.tsx";
 import Container from "./components/Container.tsx";
+import { Form } from "./components/Form.tsx";
 
 function App() {
 	const input = useRef<HTMLInputElement>(null);
 
 	const hanleClick = () => {
 		console.log("click!");
+	};
+
+	const handleSave = (data: unknown) => {
+		const extractedData = data as { name: string; age: string };
+		console.log({ extractedData });
 	};
 
 	return (
@@ -38,6 +44,14 @@ function App() {
 			</Container>
 			<InputR id="name" label="Your name" type="text" ref={input} />
 			<InputR id="age" label="Your age" type="number" />
+			<hr />
+			<Form onSave={handleSave}>
+				<InputR type="text" label="name" id="name" />
+				<InputR type="number" label="age" id="age" />
+				<p>
+					<Button>Save</Button>
+				</p>
+			</Form>
 		</main>
 	);
 }
