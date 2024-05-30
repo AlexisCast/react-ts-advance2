@@ -1,17 +1,20 @@
 import { useRef } from "react";
 
-import { Button as ButtonDif } from "./components/Button_Dif_Elements.tsx";
-import { Button } from "./components/Button.tsx";
+import { Button as ButtonDif } from "./components/UI/Button_Dif_Elements.tsx";
+import { Button } from "./components/UI/Button.tsx";
 //Without ref
-import { Input as InputNoRef } from "./components/Input.tsx";
+import { Input as InputNoRef } from "./components/UI/Input.tsx";
 //With ref
-import { Input as InputR } from "./components/InputRef.tsx";
-import Container from "./components/Container.tsx";
-import { Form } from "./components/Form.tsx";
+import { Input as InputR } from "./components/UI/InputRef.tsx";
+import Container from "./components/UI/Container.tsx";
+import { Form } from "./components/UI/Form.tsx";
 import {
 	Form as FormImp,
 	type FormHandle,
-} from "./components/FormImperative.tsx";
+} from "./components/UI/FormImperative.tsx";
+import AddTimer from "./components/AddTimer.tsx";
+import Header from "./components/Header.tsx";
+import Timers from "./components/Timers.tsx";
 
 function App() {
 	const input = useRef<HTMLInputElement>(null);
@@ -72,6 +75,14 @@ function App() {
 					<Button>Save</Button>
 				</p>
 			</FormImp>
+			<hr />
+			<>
+				<Header />
+				<main>
+					<AddTimer />
+					<Timers />
+				</main>
+			</>
 		</main>
 	);
 }
