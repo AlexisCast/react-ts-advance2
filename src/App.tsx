@@ -15,6 +15,7 @@ import {
 import AddTimer from "./components/AddTimer.tsx";
 import Header from "./components/Header.tsx";
 import Timers from "./components/Timers.tsx";
+import { TimersContextProvider } from "./store/timers-contest.tsx";
 
 function App() {
 	const input = useRef<HTMLInputElement>(null);
@@ -76,13 +77,13 @@ function App() {
 				</p>
 			</FormImp>
 			<hr />
-			<>
+			<TimersContextProvider>
 				<Header />
 				<main>
 					<AddTimer />
 					<Timers />
 				</main>
-			</>
+			</TimersContextProvider>
 		</main>
 	);
 }
