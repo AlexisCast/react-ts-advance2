@@ -14,7 +14,7 @@ import {
 } from "./components/UI/FormImperative.tsx";
 import AddTimer from "./components/AddTimer.tsx";
 import Header from "./components/Header.tsx";
-import Timers from "./components/Timers.tsx";
+import { Timers } from "./components/Timers.tsx";
 import { TimersContextProvider } from "./store/timers-contest.tsx";
 
 function App() {
